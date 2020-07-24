@@ -1,0 +1,10 @@
+sudo docker create \
+  --name=tautulli \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e TZ="America/Chicago" \
+  -p 8181:8181 \
+  -v /mnt/bignas_Docker_Volumes/Tautulli:/config \
+  -v /mnt/bignas_Docker_Volumes/Tautulli:/logs \
+  --restart unless-stopped \
+  linuxserver/tautulli
